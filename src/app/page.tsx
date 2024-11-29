@@ -62,12 +62,12 @@ const testimonials = [
   {
     name: 'John Doe',
     comment:
-      'GadgetApp has revolutionized how I shop for tech. It&apos;s so convenient!',
+      'GadgetApp has revolutionized how I shop for tech. It's so convenient!',
   },
   {
     name: 'Jane Doe',
     comment:
-      'The exclusive deals on this app are unbeatable. I&apos;ve saved so much!',
+      'The exclusive deals on this app are unbeatable. I've saved so much!',
   },
 ];
 
@@ -248,7 +248,7 @@ export default function Home() {
           target="_blank"
           className="container mx-auto px-4 text-center"
         >
-          <p>Don&apos;t Click Huwag</p>
+          <p>Don't Click Huwag</p>
         </Link>
       </footer>
     </div>
