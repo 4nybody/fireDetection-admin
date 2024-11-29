@@ -21,7 +21,8 @@ import { createClient } from '@/supabase/client';
 
 const NAV_LINKS = [
 	{ href: '/admin/dashboard', label: 'Dashboard' },
-	// { href: '/admin/orders', label: 'fvckYou' },
+	{ href: '/admin/history', label: 'History' },
+	{ href: '/admin/userManagement', label: 'user-management' },
 ];
 
 export const Header = () => {

@@ -172,7 +172,7 @@ export default function Home() {
                 Experience the future of gadget at your fingertips.
               </p>
               <div className="flex flex-wrap justify-center gap-4 md:gap-0 md:flex-nowrap md:space-x-4">
-                <Button size="lg" className="bg-white hover:bg-indigo-100">
+                <Button size="lg" className="bg-white hover:bg-indigo-100 text-black">
                   <Image
                     src="/apple.jpeg"
                     alt="App Store"
@@ -182,7 +182,7 @@ export default function Home() {
                   />
                   App Store
                 </Button>
-                <Button size="lg" className="bg-white hover:bg-indigo-100">
+                <Button size="lg" className="bg-white hover:bg-indigo-100 text-black">
                   <Image
                     src="/google-play.png"
                     alt="Google Play"
@@ -193,6 +193,7 @@ export default function Home() {
                   Google Play
                 </Button>
               </div>
+
             </CardContent>
           </Card>
         </section>

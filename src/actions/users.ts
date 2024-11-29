@@ -15,15 +15,17 @@ export const getMonthlyUsers = async () => {
     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
   ];
 
-  const usersByMonth = data.reduce((acc: Record<string, number>, user: { created_at: string }) => {
+  const usersByMonth = data.reduce((acc: Record<string, number>, user: { created_at: string | null }) => {
+  if (user.created_at) { // Only process users where created_at is not null
     const date = new Date(user.created_at);
     const month = `${monthNames[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
+    
+    // Increment the count for that month
+    acc[month] = (acc[month] || 0) + 1;
+  }
+  return acc;
+}, {});
 
-    if (!acc[month]) acc[month] = 0;
-    acc[month]++;
-
-    return acc;
-  }, {});
 
   return Object.keys(usersByMonth).map(month => ({
     name: month,
@@ -54,9 +56,10 @@ export const getUserSystems = async (userId: string) => {
   const supabase = await createClient();
 
   const { data, error } = await supabase
-    .from('user_systems')
-    .select('system_id')
-    .eq('user_id', userId); // Filter by user ID
+  .from('systems') // Use the correct table name here
+  .select('system_id')
+  .eq('user_id', userId);
+
 
   if (error) {
     throw new Error(`Error fetching user systems: ${error.message}`);

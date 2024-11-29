@@ -13,9 +13,12 @@ export const getAverageSensorDataByType = async (sensorType: string) => {
   const supabase = await createClient();
 
   try {
-    // Ensure we pass the parameter as 'sensor_type_param' (matching the function definition)
+    // Define the expected return type for the data
+    type SensorDataRow = { date: string; avg_value: number };
+
+    // Call the RPC function with the correct type signature
     const { data, error } = await supabase.rpc('get_daily_avg_sensor_data', {
-      sensor_type_param: sensorType, // Correct parameter name
+      sensor_type_param: sensorType,
     });
 
     if (error) {
@@ -30,7 +33,7 @@ export const getAverageSensorDataByType = async (sensorType: string) => {
     console.log("Fetched Sensor Data:", data);
 
     // Map results to a user-friendly structure
-    return data.map((row: { date: string; avg_value: number }) => ({
+    return data.map((row: SensorDataRow) => ({
       name: `Avg ${sensorType.charAt(0).toUpperCase() + sensorType.slice(1)} on ${row.date}`,
       value: row.avg_value,
     }));
@@ -42,5 +45,3 @@ export const getAverageSensorDataByType = async (sensorType: string) => {
     throw new Error('An unexpected error occurred.');
   }
 };
-
-
