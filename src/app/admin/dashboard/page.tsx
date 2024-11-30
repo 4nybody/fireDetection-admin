@@ -16,7 +16,7 @@ const DashboardPage = async () => {
 
     // Fetch average temperature and smoke data across all users
     const temperatureData = await getAverageSensorDataByType('temperature');
-    const smokeData = await getAverageSensorDataByType('smoke');
+    const smokeData = await getAverageSensorDataByType('co');
 
     // Return the page component with the fetched data
     return (

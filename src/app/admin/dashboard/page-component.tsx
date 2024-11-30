@@ -35,7 +35,7 @@ const PageComponent = ({
               data={monthlyUsers}
               title="New Users"
               dataKey="value"
-              color="#82ca9d"
+              color="#FF4433"
             />
           </CardContent>
         </Card>
