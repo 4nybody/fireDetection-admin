@@ -62,7 +62,7 @@ const testimonials = [
   {
     name: 'John Doe',
     comment:
-      'This has revolutionized how I shop for tech. I"ts so convenient!',
+      'This has revolutionized my safety. I"ts so convenient!',
   },
   {
     name: 'Jane Doe',
