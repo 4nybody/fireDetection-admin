@@ -62,12 +62,12 @@ const testimonials = [
   {
     name: 'John Doe',
     comment:
-      'GadgetApp has revolutionized how I shop for tech. I"ts so convenient!',
+      'This has revolutionized how I shop for tech. I"ts so convenient!',
   },
   {
     name: 'Jane Doe',
     comment:
-      'The exclusive deals on this app are unbeatable. I"ve saved so much!',
+      'This app are unbeatable. I Love it so much!',
   },
 ];
 
